@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Hospital - GTA</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Hospital Tools</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>GTA</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Relatório de Medicações</a>
+                        </li>
+                        <!-- Outras pãginas 
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                        -->
+                    </ul>
+                </li>
+                <!-- Outras pãginas
+                <li>
+                    <a href="#">About</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+
+                Fim do comentário   -->
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Principal</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="documentacao.html">Documentação</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Inicio do conteúdo da página-->
+
+            <script>
+                function calcularValores() {
+        
+                    sintomas = "";
+                    medicamentos = "";
+                    tratamentos = "";
+        
+                    // Registro 
+                    nome = document.getElementById('nome').value;
+                    passaporte = document.getElementById('passaporte').value;
+                    dataehorario = document.getElementById('dataehorario').value;
+                    datanascimento = document.getElementById('datanascimento').value;
+                    rg = document.getElementById('rg').value;
+                    telefoneparaemergência = document.getElementById('telefoneparaemergência').value;
+                    alergiaamedicamentos = document.getElementById('alergiaamedicamentos').value;
+        
+        
+                    // sintomas
+        
+                    if (document.getElementById('dorCabeca').checked) {
+                        sintomas += "Dor de Cabeça  <br>"
+                    }
+        
+                    if (document.getElementById('dorabdominal').checked) {
+                        sintomas += "Dor abdominal <br>"
+                    }
+        
+                    if (document.getElementById('Dornocorpoforte').checked) {
+                        sintomas += "Dor no corpo forte <br>"
+                    }
+        
+                    if (document.getElementById('inflamação,inchaçoedor').checked) {
+                        sintomas += "Inflamação, inchaço e dor <br>"
+                    }
+        
+        
+        
+        
+                    // medicamentos
+        
+                    if (document.getElementById('dorflex').checked) {
+                        medicamentos += "Dorflex <br>"
+                    }
+        
+                    if (document.getElementById('buscopan').checked) {
+                        medicamentos += "Buscopan <br>"
+                    }
+        
+                    if (document.getElementById('Paracetamol').checked) {
+                        medicamentos += "Paracetamol <br>"
+                    }
+        
+                    if (document.getElementById('voltaren').checked) {
+                        medicamentos += "Voltaren <br>"
+                    }
+        
+                    if (document.getElementById('trandrilax').checked) {
+                        medicamentos += "Trandrilax <br>"
+                    }
+        
+        
+        
+                    // tratamentos
+        
+                    if (document.getElementById('tratamento1').checked) {
+                        tratamentos += "O paciente deve tomar os comprimidos com líquido (aproximadamente ½ a 1 copo), por via oral. 1 a 2 comprimidos, 3 a 4 vezes ao dia, via oral <br>"
+                    }
+        
+                    if (document.getElementById('tratamento2').checked) {
+                        tratamentos += "Os comprimidos devem ser ingeridos inteiros por via oral com água. A dose recomendada é de 1 a 2 comprimidos revestidos de 10 mg/250 mg, 3 a 4 vezes ao dia. <br>"
+                    }
+        
+                    if (document.getElementById('tratamento3').checked) {
+                        tratamentos += "O paracetamol pode ser administrado independentemente das refeições. O Paracetamol deve ser dissolvido na boca ou mastigado individualmente, ou seja, um de cada vez, antes de engolir. A dose recomendada de paracetamol varia de 10 a 15 mg/kg/dose, com intervalo de 4 a 6 horas entre cada administração. <br>"
+                    }
+        
+                    if (document.getElementById('tratamento4').checked) {
+                        tratamentos += "A dose total diária deve ser dividida em 2 ou 3 doses separadas. Você não deve tomar mais que 150 mg por dia. Se você tomar Voltaren® por mais de algumas semanas, você deve garantir um retorno ao seu médico para avaliações regulares, para garantir que você não está sofrendo de reações adversas despercebidas. <br>"
+                    }
+                    
+                    if (document.getElementById('tratamento5').checked) {
+                        tratamentos += "Como regra geral, a dose mínima diária recomendada é de um comprimido a cada 12 horas, respeitando o máximo de um comprimido tomado a cada 8 horas, portanto, três doses diárias. <br>"
+                    }
+        
+        
+                    // Imprimir resultado
+        
+                    document.getElementById("resultado").innerHTML = "<h6>**Relatório do Paciente**</h6><hr>" +
+                        "<b>**Nome completo:**</b> " + nome +
+                        "<br><b>**Passaporte:**</b> " + passaporte +
+                        "<br><b>**Data nascimento:**</b> " + datanascimento +
+                        "<br><b>**RG:**</b>" + rg +
+                        "<br><b>**Data e horário:**</b> " + dataehorario +
+                        "<br><b>**Telefone para emergência:**</b> " + telefoneparaemergência +
+                        "<br><b>**Alergia a medicamentos:**</b> " + alergiaamedicamentos +
+        
+        
+                        "<br><br><h6>**Sintomas**</h6><hr>" + sintomas +
+                        "<br><h6>**Medicamentos**</h6><hr>" + medicamentos +
+                        "<br><h6>**Tratamentos**</h6><hr>" + tratamentos;
+        
+                }
+            </script>
+            
+
+            
+
+                <br>
+                <h3>Hospital</h3><br>
+        
+        
+                <!-- Inicio do registro -->
+        
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Registro</h5>
+        
+                        <div class="form-group">
+                            <label>Nome completo:</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Nome">
+                        </div>
+        
+                        <div class="form-group">
+                            <label>Passaporte:</label>
+                            <input type="number" class="form-control" id="passaporte" placeholder="Passaporte">
+                        </div>
+        
+                        <div class="form-group">
+                            <label>Data e horario:</label>
+                            <input type="text" class="form-control" id="dataehorario" placeholder="Data e horario">
+                        </div>
+        
+                        <div class="form-group">
+                            <label>RG:</label>
+                            <input type="number" class="form-control" id="rg" placeholder="Número do RG">
+                        </div>
+        
+        
+                        <div class="form-group">
+                            <label>Data de nascimento:</label>
+                            <input type="date" class="form-control" id="datanascimento">
+                        </div>
+        
+        
+                        <div class="form-group">
+                            <label>Telefone para emergência:</label>
+                            <input type="text" class="form-control" id="telefoneparaemergência"
+                                placeholder="Telefone para emergência">
+                        </div>
+        
+                        <div class="form-group">
+                            <label>Alergia a medicamentos:</label>
+                            <input type="text" class="form-control" id="alergiaamedicamentos"
+                                placeholder="Alergia a medicamentos">
+                        </div>
+        
+        
+        
+        
+        
+                    </div>
+                </div>
+                <br>
+        
+                <!-- Fim do registro -->
+        
+                <!-- Inicio do sintoma-->
+        
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Sintomas</h5>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="dorCabeca">
+                                    <label class="form-check-label">
+                                        1 - Dor de cabeça leve.
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="dorabdominal">
+                                    <label class="form-check-label">
+                                        2 - cólicas intestinais, estomacais,
+                                        dores e desconforto na barriga
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="Dornocorpoforte">
+                                    <label class="form-check-label">
+                                        3 - dores associadas a resfriados comuns, dor de cabeça, dor no corpo, dor de dente, dor nas costas, dores musculares, dores leves associadas a artrites e cólicas menstruais
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="inflamação,inchaçoedor">
+                                    <label class="form-check-label">
+                                        4 - Inflamação, inchaço e dor.
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="articulaçoes,músculoseesqueleto">
+                                    <label class="form-check-label">
+                                        5 - Articulações, músculos e esqueleto.
+                                    </label>
+                                </div>
+        
+        
+        
+        
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Fim do sintoma -->
+        
+                    <!-- Inicio do medicamentos-->
+        
+        
+                    <div class="col-sm">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Medicamentos</h5>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="dorflex">
+                                    <label class="form-check-label">
+                                        1 - Dorflex
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="buscopan">
+                                    <label class="form-check-label">
+                                        2 - Buscopan
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="Paracetamol">
+                                    <label class="form-check-label">
+                                        3 - Paracetamol
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="voltaren">
+                                    <label class="form-check-label">
+                                        4 - Voltaren
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="trandrilax">
+                                    <label class="form-check-label">
+                                        5 - Trandrilax
+                                    </label>
+                                </div>
+        
+        
+        
+        
+        
+        
+                            </div>
+                        </div>
+                    </div>
+        
+        
+                    <!-- Fim do medicamento -->
+        
+                    <!-- Inicio do tratamento -->
+        
+                    <div class="col-sm">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Tratamentos</h5>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="tratamento1">
+                                    <label class="form-check-label">
+                                        Tratamento com Dorflex.
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="tratamento2">
+                                    <label class="form-check-label">
+                                        Tratamento com Buscopan.	
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="tratamento3">
+                                    <label class="form-check-label">
+                                        Tratamento com Paracetamol.
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="tratamento4">
+                                    <label class="form-check-label">
+                                        Tratamento com Voltaren
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="tratamento5">
+                                    <label class="form-check-label">
+                                        Tratamento com Trandrilax
+                                    </label>
+                                </div>
+        
+        
+        
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Fim do tratamento -->
+        
+                    <button onclick="calcularValores()" class="btn btn-primary">Enviar</button>
+                </div><br>
+        
+        
+                <!-- Mostrar resultado -->
+        
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Resultados</strong>
+                    </div>
+                    <div class="card-body" id="resultado">
+                    </div>
+                </div>
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Fim do conteúdo da página-->
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
