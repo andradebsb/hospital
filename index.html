@@ -1,0 +1,364 @@
+<html>
+
+<head>
+	<title>Hospital</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+	<!-- jQuery and JS bundle w/ Popper.js -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+	</script>
+
+	<script>
+		function calcularValores() {
+
+			sintomas = "";
+			medicamentos = "";
+			tratamentos = "";
+
+			// Registro 
+			nome = document.getElementById('nome').value;
+			passaporte = document.getElementById('passaporte').value;
+			dataehorario = document.getElementById('dataehorario').value;
+			datanascimento = document.getElementById('datanascimento').value;
+			rg = document.getElementById('rg').value;
+			telefoneparaemergência = document.getElementById('telefoneparaemergência').value;
+			alergiaamedicamentos = document.getElementById('alergiaamedicamentos').value;
+
+
+			// sintomas
+
+			if (document.getElementById('dorCabeca').checked) {
+				sintomas += "Dor de Cabeça  <br>"
+			}
+
+			if (document.getElementById('dorabdominal').checked) {
+				sintomas += "Dor abdominal <br>"
+			}
+
+			if (document.getElementById('Dornocorpoforte').checked) {
+				sintomas += "Dor no corpo forte <br>"
+			}
+
+			if (document.getElementById('inflamação,inchaçoedor').checked) {
+				sintomas += "Inflamação, inchaço e dor <br>"
+			}
+
+
+
+
+			// medicamentos
+
+			if (document.getElementById('dorflex').checked) {
+				medicamentos += "Dorflex <br>"
+			}
+
+			if (document.getElementById('buscopan').checked) {
+				medicamentos += "Buscopan <br>"
+			}
+
+			if (document.getElementById('Paracetamol').checked) {
+				medicamentos += "Paracetamol <br>"
+			}
+
+			if (document.getElementById('voltaren').checked) {
+				medicamentos += "Voltaren <br>"
+			}
+
+			if (document.getElementById('trandrilax').checked) {
+				medicamentos += "Trandrilax <br>"
+			}
+
+
+
+			// tratamentos
+
+			if (document.getElementById('tratamento1').checked) {
+				tratamentos += "O paciente deve tomar os comprimidos com líquido (aproximadamente ½ a 1 copo), por via oral. 1 a 2 comprimidos, 3 a 4 vezes ao dia, via oral <br>"
+			}
+
+			if (document.getElementById('tratamento2').checked) {
+				tratamentos += "Os comprimidos devem ser ingeridos inteiros por via oral com água. A dose recomendada é de 1 a 2 comprimidos revestidos de 10 mg/250 mg, 3 a 4 vezes ao dia. <br>"
+			}
+
+			if (document.getElementById('tratamento3').checked) {
+				tratamentos += "O paracetamol pode ser administrado independentemente das refeições. O Paracetamol deve ser dissolvido na boca ou mastigado individualmente, ou seja, um de cada vez, antes de engolir. A dose recomendada de paracetamol varia de 10 a 15 mg/kg/dose, com intervalo de 4 a 6 horas entre cada administração. <br>"
+			}
+
+			if (document.getElementById('tratamento4').checked) {
+				tratamentos += "A dose total diária deve ser dividida em 2 ou 3 doses separadas. Você não deve tomar mais que 150 mg por dia. Se você tomar Voltaren® por mais de algumas semanas, você deve garantir um retorno ao seu médico para avaliações regulares, para garantir que você não está sofrendo de reações adversas despercebidas. <br>"
+			}
+			
+			if (document.getElementById('tratamento5').checked) {
+				tratamentos += "Como regra geral, a dose mínima diária recomendada é de um comprimido a cada 12 horas, respeitando o máximo de um comprimido tomado a cada 8 horas, portanto, três doses diárias. <br>"
+			}
+
+
+			// Imprimir resultado
+
+			document.getElementById("resultado").innerHTML = "<h6>**Relatório do Paciente**</h6><hr>" +
+				"<b>**Nome completo:**</b> " + nome +
+				"<br><b>**Passaporte:**</b> " + passaporte +
+				"<br><b>**Data nascimento:**</b> " + datanascimento +
+				"<br><b>**RG:**</b>" + rg +
+				"<br><b>**Data e horário:**</b> " + dataehorario +
+				"<br><b>**Telefone para emergência:**</b> " + telefoneparaemergência +
+				"<br><b>**Alergia a medicamentos:**</b> " + alergiaamedicamentos +
+
+
+				"<br><br><h6>**Sintomas**</h6><hr>" + sintomas +
+				"<br><h6>**Medicamentos**</h6><hr>" + medicamentos +
+				"<br><h6>**Tratamentos**</h6><hr>" + tratamentos;
+
+		}
+	</script>
+
+</head>
+
+<body>
+	<div class="container">
+
+		<br>
+		<h3>Hospital</h3><br>
+
+
+		<!-- Inicio do registro -->
+
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Registro</h5>
+
+				<div class="form-group">
+					<label>Nome completo:</label>
+					<input type="text" class="form-control" id="nome" placeholder="Nome">
+				</div>
+
+				<div class="form-group">
+					<label>Passaporte:</label>
+					<input type="number" class="form-control" id="passaporte" placeholder="Passaporte">
+				</div>
+
+				<div class="form-group">
+					<label>Data e horario:</label>
+					<input type="text" class="form-control" id="dataehorario" placeholder="Data e horario">
+				</div>
+
+				<div class="form-group">
+					<label>RG:</label>
+					<input type="number" class="form-control" id="rg" placeholder="Número do RG">
+				</div>
+
+
+				<div class="form-group">
+					<label>Data de nascimento:</label>
+					<input type="date" class="form-control" id="datanascimento">
+				</div>
+
+
+				<div class="form-group">
+					<label>Telefone para emergência:</label>
+					<input type="text" class="form-control" id="telefoneparaemergência"
+						placeholder="Telefone para emergência">
+				</div>
+
+				<div class="form-group">
+					<label>Alergia a medicamentos:</label>
+					<input type="text" class="form-control" id="alergiaamedicamentos"
+						placeholder="Alergia a medicamentos">
+				</div>
+
+
+
+
+
+			</div>
+		</div>
+		<br>
+
+		<!-- Fim do registro -->
+
+		<!-- Inicio do sintoma-->
+
+		<div class="row">
+			<div class="col-sm">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Sintomas</h5>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="dorCabeca">
+							<label class="form-check-label">
+								1 - Dor de cabeça leve.
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="dorabdominal">
+							<label class="form-check-label">
+								2 - cólicas intestinais, estomacais,
+								dores e desconforto na barriga
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="Dornocorpoforte">
+							<label class="form-check-label">
+								3 - dores associadas a resfriados comuns, dor de cabeça, dor no corpo, dor de dente, dor nas costas, dores musculares, dores leves associadas a artrites e cólicas menstruais
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="inflamação,inchaçoedor">
+							<label class="form-check-label">
+								4 - Inflamação, inchaço e dor.
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="articulaçoes,músculoseesqueleto">
+							<label class="form-check-label">
+								5 - Articulações, músculos e esqueleto.
+							</label>
+						</div>
+
+
+
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Fim do sintoma -->
+
+			<!-- Inicio do medicamentos-->
+
+
+			<div class="col-sm">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Medicamentos</h5>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="dorflex">
+							<label class="form-check-label">
+								1 - Dorflex
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="buscopan">
+							<label class="form-check-label">
+								2 - Buscopan
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="Paracetamol">
+							<label class="form-check-label">
+								3 - Paracetamol
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="voltaren">
+							<label class="form-check-label">
+								4 - Voltaren
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="trandrilax">
+							<label class="form-check-label">
+								5 - Trandrilax
+							</label>
+						</div>
+
+
+
+
+
+
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Fim do medicamento -->
+
+			<!-- Inicio do tratamento -->
+
+			<div class="col-sm">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Tratamentos</h5>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="tratamento1">
+							<label class="form-check-label">
+								Tratamento com Dorflex.
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="tratamento2">
+							<label class="form-check-label">
+								Tratamento com Buscopan.	
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="tratamento3">
+							<label class="form-check-label">
+								Tratamento com Paracetamol.
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="tratamento4">
+							<label class="form-check-label">
+								Tratamento com Voltaren
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="tratamento5">
+							<label class="form-check-label">
+								Tratamento com Trandrilax
+							</label>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Fim do tratamento -->
+
+			<button onclick="calcularValores()" class="btn btn-primary">Enviar</button>
+		</div><br>
+
+
+		<!-- Mostrar resultado -->
+
+		<div class="card">
+			<div class="card-header">
+				<strong>Resultados</strong>
+			</div>
+			<div class="card-body" id="resultado">
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</html>
